@@ -23,8 +23,8 @@ after-script:
   - docker images
 before-deploy:
   - docker login -u "$USER_NAME" "$REPO_ADDRESS" -p "$USER_PASSWORD"
-  - docker tag "$IMAGE_NAME" "$REPO_ADDRESS/$IMAGES_NAMESPACE/$IMAGE_NAME:latest"
-  - docker tag "$IMAGE_NAME" "$REPO_ADDRESS/$IMAGES_NAMESPACE/$IMAGE_NAME:$TRAVIS_BUILD_NUMBER"
+  - docker tag "$IMAGE_NAME:latest" "$REPO_ADDRESS/$IMAGES_NAMESPACE/$IMAGE_NAME:latest"
+  - docker tag "$IMAGE_NAME:latest" "$REPO_ADDRESS/$IMAGES_NAMESPACE/$IMAGE_NAME:$TRAVIS_BUILD_NUMBER"
 deploy:
   skip_cleanup: true
   provider: script
