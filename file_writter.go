@@ -11,7 +11,6 @@ import (
 
 //FileWritter write files according json.
 func FileWritter(tempDir string, files map[string]map[string]string) (string, error) {
-	//当前，默认只有一个文件
 	fmt.Printf("Write to Dir, %s\n", tempDir)
 	for k, v := range files {
 		absolutePath := filepath.Join(tempDir, k)

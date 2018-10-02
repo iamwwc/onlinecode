@@ -1,0 +1,32 @@
+sudo: required
+services:
+  - docker
+env:
+  global:
+    - BASE_IMAGE=golang:1.10.4-alpine3.7
+    - IMAGE_NAME=onlinecode
+before-install:
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y install docker-ce
+  - sudo apt-get -y install nodejs
+before-script:
+  - docker pull "$BASE_IMAGE"
+script:
+  - cd ../client-side
+  - npm install && npm run build
+  - cd ..
+  - cp client-side/dist/* . -R
+  - docker build --tag 0.0.1-alpine3.7 .
+after-script:
+  - docker images
+before-deploy:
+  - docker login -u "$USER_NAME" "$REPO_ADDRESS" -p "$USER_PASSWORD"
+  - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:latest"
+  - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${version}"
+deploy:
+  provider: script
+  script: docker push "${IMAGE_NAME}:latest" && docker push "${IMAGE_NAME}:${version}"
+  on:
+    branch: master

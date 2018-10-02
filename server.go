@@ -100,17 +100,6 @@ func errorResponse(msg string) *bytes.Buffer {
 		//never happen
 	}
 	return &buf
-
-	//为什么这样就不行？ 非法的dereference
-	//var buf *bytes.Buffer
-	//if err := json.NewEncoder(buf).Encode(&resp);err != nil{
-	//	log.Errorf("Error when encode error response %v",err)
-	//	//never happen
-	//}
-	//return buf
-
-	//buf 只是一个pointer,他并没有指向合法的内存空间，而NewEncoder需要将编码之后的数据写入
-	//所以写入失败
 }
 
 func compileAndRun(r *global.Request) (*global.Response, error) {
