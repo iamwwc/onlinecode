@@ -18,7 +18,7 @@ script:
   - npm install && npm run build
   - cd $TRAVIS_BUILD_DIR
   - cp $TRAVIS_BUILD_DIR/client-side/dist/* . -R
-  - docker build --tag 0.0.1-alpine3.7 .
+  - docker build .
 after-script:
   - docker images
 before-deploy:
@@ -28,6 +28,6 @@ before-deploy:
 deploy:
   skip_cleanup: true
   provider: script
-  script: docker push "${IMAGE_NAME}:latest" && docker push "${IMAGE_NAME}:${version}"
+  script: docker push "$REPO_ADDRESS/$IMAGE_NAME:latest" && docker push "$REPO_ADDRESS/$IMAGE_NAME:$TRAVIS_BUILD_NUMBER"
   on:
     branch: master
