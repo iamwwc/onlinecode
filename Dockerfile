@@ -11,4 +11,4 @@ RUN cd /go/src/chaochaogege.com/onlinecode\
 
 WORKDIR /go/src/chaochaogege.com/onlinecode
 EXPOSE 8086
-RUN onlinecode
+ENTRYPOINT ["playground"]
