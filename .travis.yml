@@ -14,10 +14,10 @@ before-install:
 before-script:
   - docker pull "$BASE_IMAGE"
 script:
-  - cd ../client-side
+  - cd $TRAVIS_BUILD_DIR/client-side
   - npm install && npm run build
-  - cd ..
-  - cp client-side/dist/* . -R
+  - cd $TRAVIS_BUILD_DIR
+  - cp $TRAVIS_BUILD_DIR/client-side/dist/* . -R
   - docker build --tag 0.0.1-alpine3.7 .
 after-script:
   - docker images
