@@ -1,0 +1,5 @@
+{
+  "database_password":"mysqlpassword",
+  "database_username":"mysql",
+  "database_ip":"onlinecodedb"
+}

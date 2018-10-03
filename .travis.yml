@@ -3,7 +3,7 @@ services:
   - docker
 env:
   global:
-    - BASE_IMAGE=golang:1.10.4-alpine3.7
+    - BASE_IMAGE=golang:1.11.1-alpine3.7
     - IMAGE_NAME=onlinecode
 before_install:
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -

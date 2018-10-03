@@ -38,5 +38,8 @@ func TestStart(t *testing.T){
 			t.Error("result not equal")
 		}
 	}
+}
 
+func TestController(t *testing.T){
+	decodeConfigJson()
 }

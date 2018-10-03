@@ -1,4 +1,4 @@
-From golang:1.10.4-alpine3.7
+From golang:1.11.1-alpine3.7
 COPY . /go/src/chaochaogege.com/onlinecode
 RUN apk add curl \
             git ;\

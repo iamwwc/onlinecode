@@ -5,9 +5,13 @@ import (
 	"crypto/sha256"
 	"database/sql"
 	"encoding/hex"
+	"encoding/json"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/sirupsen/logrus"
 	"io"
+	"io/ioutil"
+	"os"
+	"path/filepath"
 )
 
 const(
@@ -70,6 +74,23 @@ func NewController() *DatabaseController{
 	return &DatabaseController{
 		db:db,
 	}
+}
+
+func decodeConfigJson()map[string]string{
+	dir := os.Getenv("CODE_WORK_DIR")
+	if dir == ""{
+		panic("Error, cannot find CODE_WORK_DIR in onlinecodeapp")
+	}
+	config := filepath.Join(dir,"config.json")
+	bs, err := ioutil.ReadFile(config)
+	if err != nil{
+		panic(err)
+	}
+	m := make(map[string]string)
+	if err := json.Unmarshal(bs,&m); err != nil{
+		panic(err)
+	}
+	return m
 }
 
 

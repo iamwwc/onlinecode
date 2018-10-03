@@ -1,17 +1,18 @@
 version: "3"
 services:
-  web:
-    ports:
-      - "8086:8086"
-    image: iamwwc/onlinecode:latest
-    volumes:
-      - .:/go/src/onlinecode
-      - onlinecodetemp:/onlinecodetemp
-      - /var/run/docker.sock:/var/run/docker.sock
-    networks:
-      - onlinecode-net
-    container_name: onlinecodeapp
-    #command: ["sh","-c", "tail -f /dev/null & /go/src/onlinecode/scripts/onlinecode"]
+#  web:
+#    ports:
+#      - "8086:8086"
+#    image: iamwwc/onlinecode:latest
+#    volumes:
+#      - .:/go/src/onlinecode
+#      - onlinecodetemp:/onlinecodetemp
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    environment:
+#      CODE_WORK_DIR: /go/src/chaochaogege.com/onlinecode
+#    networks:
+#      - onlinecode-net
+#    container_name: onlinecodeapp
   db:
     image: mysql:8.0
     container_name: onlinecodedb
@@ -26,7 +27,20 @@ services:
       - "3300:3306"
     networks:
       - onlinecode-net
-
+#  debug:
+#    image: ccr.ccs.tencentyun.com/wwc-docker-images/onlinecode:golang-delve
+#    ports:
+#      - "8086:8086" #api port
+#      - "8088:8088" #debug server
+#    container_name: debugserver
+#    volumes:
+#      - ./:/go/src/chaochaogege.com/onlinecode
+#      - onlinecodetemp:/onlinecodetemp
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    networks:
+#      - onlinecode-net
+#    environment:
+#      CODE_WORK_DIR: /go/src/chaochaogege.com/onlinecode
 networks:
   onlinecode-net:
     driver: bridge
