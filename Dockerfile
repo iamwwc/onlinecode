@@ -9,7 +9,8 @@ RUN apk add curl; \
              rm -f /go/bin/dep; \
              rm -Rf /go/pkg; \
              apk del git; \
-             apk del curl;
+             apk del curl; \
+             ls -ila;
 WORKDIR /go/src/chaochaogege.com/onlinecode
 EXPOSE 8086
 ENTRYPOINT ["onlinecode"]
