@@ -28,8 +28,8 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: script
-  script: docker push "${DOCKER_REPO_NAME}/${IMAGE_NAME}:latest" && docker push "${DOCKER_REPO_NAME}/${IMAGE_NAME}:{$TRAVIS_BUILD_NUMBER}"
+  script: docker push "${DOCKER_REPO_NAME}/${IMAGE_NAME}:latest" && docker push "${DOCKER_REPO_NAME}/${IMAGE_NAME}:${TRAVIS_BUILD_NUMBER}"
   on:
     branch: master
-notifications:
-  email: false
+#notifications:
+ # email: false
