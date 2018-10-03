@@ -9,7 +9,7 @@ RUN apk add curl; \
              dep ensure -update -vendor-only &&  go install; \
              ls | grep -v index.html | grep -v static | grep -v templates | xargs rm -Rf; \
              rm -f /go/bin/dep; \
-             rm -Rf /go/pkg;
+             rm -Rf /go/pkg; \
              apk del git; \
 
 WORKDIR /go/src/chaochaogege.com/onlinecode
