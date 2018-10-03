@@ -2,4 +2,4 @@ vendor/*
 .idea/*
 scripts/onlinecode
 debug
-scripts/runlog.log
+**/runlog.log

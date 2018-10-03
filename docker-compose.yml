@@ -27,20 +27,24 @@ services:
       - "3300:3306"
     networks:
       - onlinecode-net
-#  debug:
-#    image: ccr.ccs.tencentyun.com/wwc-docker-images/onlinecode:golang-delve
-#    ports:
-#      - "8086:8086" #api port
-#      - "8088:8088" #debug server
-#    container_name: debugserver
-#    volumes:
-#      - ./:/go/src/chaochaogege.com/onlinecode
-#      - onlinecodetemp:/onlinecodetemp
-#      - /var/run/docker.sock:/var/run/docker.sock
-#    networks:
-#      - onlinecode-net
-#    environment:
-#      CODE_WORK_DIR: /go/src/chaochaogege.com/onlinecode
+  debug:
+    image: ccr.ccs.tencentyun.com/wwc-docker-images/onlinecode:debug-server
+    ports:
+      - "8086:8086" #api port
+      - "8088:8088" #debug server
+    container_name: debug-server
+    volumes:
+      - ./:/go/src/chaochaogege.com/onlinecode
+      - onlinecodetemp:/onlinecodetemp
+      - /var/run/docker.sock:/var/run/docker.sock
+    security_opt:
+      - 'seccomp:unconfined'
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      - onlinecode-net
+    environment:
+      CODE_WORK_DIR: /go/src/chaochaogege.com/onlinecode
 networks:
   onlinecode-net:
     driver: bridge
