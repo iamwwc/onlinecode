@@ -1,6 +1,4 @@
 From golang:1.10.4-alpine3.7
-
-
 COPY . /go/src/chaochaogege.com/onlinecode
 RUN apk add curl; \
              git; \
@@ -11,7 +9,7 @@ RUN apk add curl; \
              rm -f /go/bin/dep; \
              rm -Rf /go/pkg; \
              apk del git; \
-
+             apk del curl;
 WORKDIR /go/src/chaochaogege.com/onlinecode
 EXPOSE 8086
 ENTRYPOINT ["onlinecode"]
