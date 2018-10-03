@@ -1,1 +1,4 @@
 client-side/
+.gitignore
+.dockerignore
+.travis.yml
