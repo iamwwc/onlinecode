@@ -1,4 +1,6 @@
 client-side/
+scripts/onlinecode
 .gitignore
 .dockerignore
 .travis.yml
+.git/
