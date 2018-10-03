@@ -18,16 +18,18 @@ script:
   - npm install && npm run build
   - cd $TRAVIS_BUILD_DIR
   - cp $TRAVIS_BUILD_DIR/client-side/dist/* . -R
-  - docker build -t $IMAGE_NAME .
+  - docker build -t ${IMAGE_NAME}:latest .
 after-script:
   - docker images
 before-deploy:
-  - docker login -u "$USER_NAME" "$REPO_ADDRESS" -p "$USER_PASSWORD"
+  - docker login -u "$DOCKER_LOGIN_USER_NAME"  -p "$DOCKER_LOGIN_PASSWORD"
   - docker tag "${IMAGE_NAME}:latest" "${DOCKER_REPO_NAME}:latest"
-  - docker tag "${IMAGE_NAME}:latest" "${DOCKER_REPO_NAME}:$TRAVIS_BUILD_NUMBER"
+  - docker tag "${IMAGE_NAME}:latest" "${DOCKER_REPO_NAME}:${TRAVIS_BUILD_NUMBER}"
 deploy:
   skip_cleanup: true
   provider: script
-  script: docker push "${DOCKER_REPO_NAME}:latest" && docker push "${DOCKER_REPO_NAME}:{$TRAVIS_BUILD_NUMBER}"
+  script: docker push "${DOCKER_REPO_NAME}/${IMAGE_NAME}:latest" && docker push "${DOCKER_REPO_NAME}/${IMAGE_NAME}:{$TRAVIS_BUILD_NUMBER}"
   on:
     branch: master
+notifications:
+  email: false
