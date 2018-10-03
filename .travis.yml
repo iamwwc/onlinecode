@@ -17,7 +17,7 @@ script:
   - cd $TRAVIS_BUILD_DIR/client-side
   - npm install && npm run build
   - cd $TRAVIS_BUILD_DIR
-  - cp $TRAVIS_BUILD_DIR/client-side/dist/* . -R
+  - cp $TRAVIS_BUILD_DIR/client-side/* . -R
   - docker build -t ${IMAGE_NAME}:latest .
 after_script:
   - docker images
