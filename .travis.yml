@@ -21,10 +21,8 @@ script:
   - docker build -t ${IMAGE_NAME}:latest .
 after_script:
   - docker images
-after_success:
-  - docker images
 before_deploy:
-  - docker login -u "$DOCKER_LOGIN_USER_NAME"  -p "$DOCKER_LOGIN_PASSWORD"
+  - docker login -u ${DOCKER_LOGIN_USER_NAME}  -p ${DOCKER_LOGIN_PASSWORD}
   - docker tag "${IMAGE_NAME}:latest" "${DOCKER_REPO_NAME}/${IMAGE_NAME}:latest"
   - docker tag "${IMAGE_NAME}:latest" "${DOCKER_REPO_NAME}/${IMAGE_NAME}:${TRAVIS_BUILD_NUMBER}"
 deploy:
