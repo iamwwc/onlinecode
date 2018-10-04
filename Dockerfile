@@ -1,23 +1,25 @@
-From golang:1.11.1-alpine3.7
-COPY . /go/src/chaochaogege.com/onlinecode
-RUN apk add curl \
-            git ;\
-            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh; \
-            cd /go/src/chaochaogege.com/onlinecode; \
-            pwd; \
-            ls -ila; \
-            dep ensure -update; \
-            apk del curl; \
-            apk del git;
-RUN cd /go/src/chaochaogege.com/onlinecode; \
-            go install \
-            && ls -A | \
-            grep -v -e index.html -e static -e templates -e sql\
-            | xargs rm -Rf; \
-            rm -f /go/bin/dep; \
-            rm -Rf /go/pkg; \
-            ls -ilA;
+From debian:jessie as builder
+ENV BUILD_DEPS "curl git"
 
+COPY . /go/src/chaochaogege.com/onlinecode
 WORKDIR /go/src/chaochaogege.com/onlinecode
+RUN apt-get update;\
+    apt-get install nodejs -y --no-install-recommends;
+
+RUN cd ./client-side \
+    && npm install && npm run build;
+COPY ./sql ./client-side/dist/
+
+RUN apt-get update && apt-get install ${BUILD_DEPS} -y --no-install-recommends;\
+    curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh; \
+    dep ensure -update;\
+    go install;
+
+FROM golang:1.11.1-alpine3.7
+RUN mkdir -p /go/src/chaochaogege.com/onlinecode
+WORKDIR /go/src/chaochaogege.com/onlinecode
+COPY --from=builder /go/bin/onlinecode .
+COPY --from=builder /go/src/chaochaogege.com/onlinecode/client-side/dist/* .
 EXPOSE 8086
 ENTRYPOINT ["onlinecode"]
+
