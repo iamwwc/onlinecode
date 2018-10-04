@@ -30,7 +30,7 @@ func(c *DockerController)SubmitContainer(ctx context.Context,cmd string,imageNam
 	log.Debugf("Create container, Working Dir %s, mount target %s\n",c.WorkingDir,VolumePath)
 	containerCreated, err := DockerClient.ContainerCreate(ctxx,&container.Config{
 		WorkingDir:c.WorkingDir,
-		Cmd:[]string{"bash","-c",cmd},
+		Cmd:[]string{"sh","-c",cmd},
 		AttachStdout:true,
 		AttachStderr:true,
 		AttachStdin:true,

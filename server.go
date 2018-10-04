@@ -10,6 +10,7 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http"
+	"strings"
 	"time"
 )
 
@@ -39,7 +40,9 @@ func newServer(options ...func(*server) error) (*server, error) {
 func (s *server) init() {
 	s.mux.HandleFunc(global.CompilePath, s.commandHandler(compileAndRun))
 	s.mux.HandleFunc(global.SharePath,s.handleShare)
-	s.mux.HandleFunc(global.FromSharePath,s.FromShare)
+	s.mux.HandleFunc("/",s.handleFromIndex)
+	staticHandler := http.StripPrefix("/static/",http.FileServer(http.Dir("./static/")))
+	s.mux.Handle("/static/", staticHandler)
 }
 
 func (s *server) commandHandler(cmd func(*global.Request) (*global.Response, error)) func(http.ResponseWriter, *http.Request) {
@@ -74,6 +77,33 @@ func (s *server) commandHandler(cmd func(*global.Request) (*global.Response, err
 		res := encodeResponse(response)
 		io.Copy(w, res)
 	}
+}
+
+func (s *server)handleFromIndex(w http.ResponseWriter, r *http.Request){
+	if strings.HasPrefix(r.URL.Path, "/share/"){
+		id := r.URL.Path[7:]
+		snippet := &global.Snippet{
+			Src:nil,
+			ID:id,
+		}
+		res, err :=s.db.GetSnippet(context.Background(),snippet)
+		if err != nil{
+			log.Error(err)
+			report(w,"error when get Snippet")
+			return
+		}
+
+		if r, ok := res.(string); !ok{
+			log.Errorf("error res is not string")
+			report(w,"error res is not string")
+			return
+		}else{
+			GenerateShareTemplate(w,r)
+			return
+		}
+	}
+	w.Header().Set("Content-Type","text/html")
+	GenerateShareTemplate(w,"")
 }
 
 func (s *server) ServeHTTP(w http.ResponseWriter, r *http.Request) {

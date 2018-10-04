@@ -4,6 +4,8 @@ import (
 	"context"
 	"database/sql"
 	"github.com/sirupsen/logrus"
+	"os"
+	"path/filepath"
 	"testing"
 )
 
@@ -40,6 +42,16 @@ func TestStart(t *testing.T){
 	}
 }
 
+func Must(s string, err error)string{
+	if err != nil{
+		panic(err)
+	}
+
+	return s
+}
+
 func TestController(t *testing.T){
+	path := filepath.Dir(Must(os.Getwd()))
+	os.Setenv("CODE_WORK_DIR",path)
 	decodeConfigJson()
 }

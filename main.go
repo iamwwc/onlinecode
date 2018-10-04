@@ -6,6 +6,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"path/filepath"
 )
 
 func main() {
@@ -29,7 +30,12 @@ func main() {
 }
 
 func prepareLogFile(name string)*os.File{
-	file, err := os.OpenFile(name,os.O_CREATE | os.O_WRONLY , 755)
+	workDir := os.Getenv("CODE_WORK_DIR")
+	if workDir == ""{
+		panic("cannot get env CODE_WORK_DIR")
+	}
+	currentDir := filepath.Join(workDir,name)
+	file, err := os.OpenFile(currentDir,os.O_CREATE | os.O_WRONLY | os.O_APPEND, 755)
 	if err != nil{
 		panic(err)
 	}

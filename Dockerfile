@@ -11,10 +11,12 @@ RUN apk add curl \
             apk del git;
 RUN cd /go/src/chaochaogege.com/onlinecode; \
             go install \
-            && ls | grep -v index.html | grep -v static | grep -v templates | xargs rm -Rf; \
+            && ls -A | \
+            grep -v -e index.html -e static -e templates -e sql\
+            | xargs rm -Rf; \
             rm -f /go/bin/dep; \
             rm -Rf /go/pkg; \
-            ls -ila;
+            ls -ilA;
 
 WORKDIR /go/src/chaochaogege.com/onlinecode
 EXPOSE 8086

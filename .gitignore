@@ -1,5 +1,6 @@
 vendor/*
-.idea/*
 scripts/onlinecode
 debug
 **/runlog.log
+static/
+index.html

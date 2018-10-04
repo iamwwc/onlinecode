@@ -15,6 +15,7 @@ before_script:
   - docker pull "$BASE_IMAGE"
 script:
   - cd $TRAVIS_BUILD_DIR/client-side
+  - npm i npm@latest -g
   - npm install && npm run build
   - cd $TRAVIS_BUILD_DIR
   - cp $TRAVIS_BUILD_DIR/client-side/dist/* . -R

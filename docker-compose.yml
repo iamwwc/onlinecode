@@ -1,3 +1,5 @@
+# 一共三个容器，使用时注视到debug-server，调试过程注释掉web
+
 version: "3"
 services:
 #  web:
@@ -41,12 +43,11 @@ services:
       - 'seccomp:unconfined'
     cap_add:
       - SYS_PTRACE
-    restart: always
+    #restart: always
     networks:
       - onlinecode-net
     environment:
       CODE_WORK_DIR: /go/src/chaochaogege.com/onlinecode
-    command: ["sh","-c","dlv --output /tmp/debug --wd /go/src/chaochaogege.com/onlinecode --headless --listen=:8088 --api-version=2 --accept-multiclient"]
 networks:
   onlinecode-net:
     driver: bridge

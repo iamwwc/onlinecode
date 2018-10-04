@@ -1,6 +1,6 @@
 # 这个镜像配合docker-compose always start可以做到调试结束之后由docker再次启动此容器，进行下一次调试
 # 但docker启动container有时间限制，大约在停止4s后才会重新启动，比起`debug-server`的Dockerfile，这个就不需要
-#每次手动启动了
+#每次手动启动了,但是由于dlv已经启动，所以编译已经完成，调试的代码始终是上次的代码
 
 FROM golang:1.11-alpine3.7
 RUN apk add git make build-base; \

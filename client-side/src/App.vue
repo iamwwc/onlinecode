@@ -46,7 +46,7 @@ export default{
     }
   },
   created () {
-    if (typeof (window.EditorConfig) !== 'undefined') {
+    if (window.EditorConfig !== '') {
       this.setWorkSpace(JSON.parse(window.EditorConfig).data)
       this.$nextTick(() => {
         this.$refs.filetree.fromInjectedEnv()

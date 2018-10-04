@@ -8,7 +8,7 @@ import (
 
 const maxRunTime = time.Second * 10
 const buildCmd = "go build -o %s %s && ./%s"
-const image = "golang"
+const image = "golang:1.11.1-alpine3.7"
 
 type GolangRunner struct {
 }

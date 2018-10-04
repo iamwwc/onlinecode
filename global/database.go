@@ -1,6 +1,7 @@
 package global
 
 import (
+	"bufio"
 	"context"
 	"crypto/sha256"
 	"database/sql"
@@ -54,7 +55,7 @@ func (c *DatabaseController)PutSnippet(ctx context.Context, snippet *Snippet)(st
 	id := snippet.getID()
 	if _, err := c.db.ExecContext(ctx,InsetSnippet,id,snippet.Src,snippet.Src); err != nil{
 		logrus.Debug(err)
-		return "",nil
+		return "",err
 	}
 	return id , nil
 }
@@ -67,7 +68,18 @@ func (s *Snippet)getID()string{
 }
 
 func NewController() *DatabaseController{
-	db, err := sql.Open("mysql","root:wxlwuweichao@/onlinecode")
+	dir := os.Getenv("CODE_WORK_DIR")
+	if dir == ""{
+		panic("cannot find special ENV CODE_WORK_DIR")
+	}
+
+	c := decodeConfigJson(dir)
+
+	//[username[:password]@][protocol[(address)]]/dbname[?param1=value1&...&paramN=valueN]
+	authURL := c["database_username"] + ":" + c["database_password"] + "@tcp(" + c["database_ip"] + ")/"
+	initDatabase(authURL,dir)
+	db, err := sql.Open("mysql",authURL + "onlinecode")
+
 	if err != nil{
 		panic(err)
 	}
@@ -76,11 +88,29 @@ func NewController() *DatabaseController{
 	}
 }
 
-func decodeConfigJson()map[string]string{
-	dir := os.Getenv("CODE_WORK_DIR")
-	if dir == ""{
-		panic("Error, cannot find CODE_WORK_DIR in onlinecodeapp")
+func initDatabase(authURL, dir string){
+	initOnlineCodeDatabaseSQL := filepath.Join(dir,"sql/init-onlinecode-database.sql")
+	db, err := sql.Open("mysql",authURL)
+	if err != nil{
+		panic(err)
 	}
+
+	reader, err :=os.Open(initOnlineCodeDatabaseSQL)
+	if err != nil{
+		logrus.Errorf("Error when initDatabase, cannot optn initdatabase.sql file [%v]",err)
+		panic(err)
+	}
+	bufReader := bufio.NewReader(reader)
+	for{
+		line, _, err := bufReader.ReadLine()
+		if err != nil{
+			break;
+		}
+		db.Exec(string(line))
+	}
+}
+
+func decodeConfigJson(dir string)map[string]string{
 	config := filepath.Join(dir,"config.json")
 	bs, err := ioutil.ReadFile(config)
 	if err != nil{

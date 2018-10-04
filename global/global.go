@@ -8,6 +8,7 @@ const (
 	CompilePath = "/api/compile"
 	SharePath = "/api/share"
 	FromSharePath = "/share/"
+	IndexPath = "/"
 	VolumeName = "onlinecode_onlinecodetemp"
 	VolumePath = "/onlinecodetemp/"
 )
