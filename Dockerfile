@@ -6,7 +6,9 @@ WORKDIR /go/src/chaochaogege.com/onlinecode
 RUN apt-get update;\
     apt-get install nodejs -y --no-install-recommends;
 
-RUN cd ./client-side \
+RUN pwd;\
+    ls -Ali;\
+    cd ./client-side \
     && npm install && npm run build;
 COPY ./sql ./client-side/dist/
 
@@ -23,3 +25,4 @@ COPY --from=builder /go/src/chaochaogege.com/onlinecode/client-side/dist/* .
 EXPOSE 8086
 ENTRYPOINT ["onlinecode"]
 
+-
