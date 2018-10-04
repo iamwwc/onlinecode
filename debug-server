@@ -1,0 +1,15 @@
+#包含delve golang调试器，需要启动之后使用docker exec拿到shell，在workdir下面运行
+#dlv debug --output /tmp/debug --wd /go/src/chaochaogege.com/onlinecode --headless --listen=:8088 --api-version=2 --accept-multiclient
+#调试结束后dlv会自动停止，下次调试需要再次运行`dlv debug....`
+
+FROM golang:1.11-alpine3.7
+RUN apk add git make build-base; \
+    go get -u github.com/derekparker/delve/cmd/dlv;\
+    cd $GOPATH/src/github.com/derekparker/delve;\
+    make install; \
+    apk del make; \
+    rm -Rf /go/src/github.com/derekparker;
+EXPOSE 8088
+EXPOSE 8086
+WORKDIR /go/src/chaochaogege.com/onlinecode
+ENTRYPOINT ["sh","-c","tail /dev/null -f"]

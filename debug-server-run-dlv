@@ -1,0 +1,15 @@
+# 这个镜像配合docker-compose always start可以做到调试结束之后由docker再次启动此容器，进行下一次调试
+# 但docker启动container有时间限制，大约在停止4s后才会重新启动，比起`debug-server`的Dockerfile，这个就不需要
+#每次手动启动了
+
+FROM golang:1.11-alpine3.7
+RUN apk add git make build-base; \
+    go get -u github.com/derekparker/delve/cmd/dlv;\
+    cd $GOPATH/src/github.com/derekparker/delve;\
+    make install; \
+    apk del make; \
+    rm -Rf /go/src/github.com/derekparker;
+EXPOSE 8088
+EXPOSE 8086
+WORKDIR /go/src/chaochaogege.com/onlinecode
+ENTRYPOINT ["sh","-c","dlv debug --output /tmp/debug --wd /go/src/chaochaogege.com/onlinecode --headless --listen=:8088 --api-version=2 --accept-multiclient"]

@@ -5,7 +5,7 @@ services:
 #      - "8086:8086"
 #    image: iamwwc/onlinecode:latest
 #    volumes:
-#      - .:/go/src/onlinecode
+#      - .:/go/src/chaochaogege.com/onlinecode
 #      - onlinecodetemp:/onlinecodetemp
 #      - /var/run/docker.sock:/var/run/docker.sock
 #    environment:
@@ -27,8 +27,8 @@ services:
       - "3300:3306"
     networks:
       - onlinecode-net
-  debug:
-    image: ccr.ccs.tencentyun.com/wwc-docker-images/onlinecode:debug-server
+  debug-service:
+    image: ccr.ccs.tencentyun.com/wwc-docker-images/onlinecode:debug-server-run-dlv
     ports:
       - "8086:8086" #api port
       - "8088:8088" #debug server
@@ -41,10 +41,12 @@ services:
       - 'seccomp:unconfined'
     cap_add:
       - SYS_PTRACE
+    restart: always
     networks:
       - onlinecode-net
     environment:
       CODE_WORK_DIR: /go/src/chaochaogege.com/onlinecode
+    command: ["sh","-c","dlv --output /tmp/debug --wd /go/src/chaochaogege.com/onlinecode --headless --listen=:8088 --api-version=2 --accept-multiclient"]
 networks:
   onlinecode-net:
     driver: bridge
