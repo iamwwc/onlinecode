@@ -1,4 +1,4 @@
-FROM node:8.12.0-jessie as builder
+FROM iamwwc/node-golang:latest as builder
 ENV BUILD_DEPS "curl git"
 
 COPY . /go/src/chaochaogege.com/onlinecode
