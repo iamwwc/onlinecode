@@ -20,5 +20,6 @@ RUN mkdir -p /go/src/chaochaogege.com/onlinecode
 WORKDIR /go/src/chaochaogege.com/onlinecode
 COPY --from=builder /go/bin/onlinecode ./
 COPY --from=builder /go/src/chaochaogege.com/onlinecode/client-side/dist/* ./
+RUN chmod +x onlinecode
 EXPOSE 8086
 ENTRYPOINT ["/go/src/chaochaogege.com/onlinecode"]
