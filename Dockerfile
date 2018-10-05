@@ -1,12 +1,11 @@
-FROM debian:jessie as builder
+FROM node:8.12.0-jessie as builder
 ENV BUILD_DEPS "curl git"
 
 COPY . /go/src/chaochaogege.com/onlinecode
 WORKDIR /go/src/chaochaogege.com/onlinecode
-RUN apt-get update && apt-get install curl git sudo --no-install-recommends -y
-RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E sh -;\
-    apt-get install nodejs -y --no-install-recommends;
 
+RUN node --version ;\
+    npm --version;
 RUN cd ./client-side \
     && npm install && npm run build;
 COPY ./sql ./client-side/dist/

@@ -88,7 +88,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="DelveDebugerDockerfile" value="35" />
-          <entry key="Dockerfile" value="300" />
+          <entry key="Dockerfile" value="329" />
           <entry key="Dockerfile-debug-server-run-automatic" value="1" />
           <entry key="bat" value="686" />
           <entry key="debug-server" value="132" />
@@ -108,7 +108,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dockerfile" value="137" />
+          <entry key="Dockerfile" value="166" />
           <entry key="Go" value="26492" />
           <entry key="HTML" value="122" />
           <entry key="JSON" value="42" />
@@ -208,8 +208,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+            <state relative-caret-position="207">
+              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -279,10 +279,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cm</find>
       <find>reference</find>
       <find>FamiliarName</find>
       <find>ParseNormalizedNamed</find>
+      <find>cm</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="C:\Go" />
@@ -601,7 +601,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" id="Project" order="1" visible="true" weight="0.17019667" />
+      <window_info id="Project" order="1" visible="true" weight="0.17019667" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4969743" weight="0.5613748" />
@@ -610,7 +610,7 @@
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.2618658" />
       <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49848714" visible="true" weight="0.24713585" />
+      <window_info active="true" anchor="bottom" id="Debug" order="7" sideWeight="0.49848714" visible="true" weight="0.16530278" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.3878887" />
       <window_info anchor="bottom" id="Docker" order="9" weight="0.27659574" />
       <window_info anchor="right" x="0" y="0" width="295" height="544" id="Documentation" side_tool="true" weight="0.32980332" />
@@ -946,8 +946,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        <state relative-caret-position="207">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
         </state>
       </provider>
     </entry>
