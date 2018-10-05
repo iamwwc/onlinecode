@@ -15,7 +15,6 @@ func getRestrictedContainerHostConfig()*container.HostConfig{
 				Type:mount.TypeVolume,
 			},
 		},
-		AutoRemove:true,
 		Resources:container.Resources{
 			MemorySwap:2e+7,
 			Memory:1e+7,
