@@ -14,6 +14,7 @@ services:
     networks:
       - onlinecode-net
     container_name: onlinecodeapp
+    pull: true
   db:
     image: mysql:8.0
     container_name: onlinecodedb
@@ -28,6 +29,7 @@ services:
       - "3300:3306"
     networks:
       - onlinecode-net
+    command: mysqld --innodb-buffer-pool-size=128M
 #  debug-service:
 #    image: ccr.ccs.tencentyun.com/wwc-docker-images/onlinecode:debug-server-run-dlv
 #    ports:
