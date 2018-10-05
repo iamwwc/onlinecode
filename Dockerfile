@@ -3,7 +3,7 @@ ENV BUILD_DEPS "curl git"
 
 COPY . /go/src/chaochaogege.com/onlinecode
 WORKDIR /go/src/chaochaogege.com/onlinecode
-RUN apt-get update;\
+RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -;\
     apt-get install nodejs -y --no-install-recommends;
 
 RUN pwd;\
