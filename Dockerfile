@@ -13,7 +13,7 @@ RUN node --version ;\
     npm --version;
 RUN cd ./client-side \
     && npm install && npm run build;
-COPY sql ./client-side/dist/
+COPY sql/ ./client-side/dist/
 
 RUN apt-get update && apt-get install ${BUILD_DEPS} -y --no-install-recommends;\
     curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh; \
