@@ -10,6 +10,7 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 )
@@ -134,7 +135,7 @@ func errorResponse(msg string) *bytes.Buffer {
 
 func compileAndRun(r *global.Request) (*global.Response, error) {
 	tempDir, err := ioutil.TempDir(global.VolumePath, "sandbox")
-	//defer os.RemoveAll(tempDir)
+	defer os.RemoveAll(tempDir)
 	if err != nil {
 		log.Errorf("Error when create temp dir %v", err)
 		return &global.Response{

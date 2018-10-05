@@ -52,6 +52,4 @@ func Must(s string, err error)string{
 
 func TestController(t *testing.T){
 	path := filepath.Dir(Must(os.Getwd()))
-	os.Setenv("CODE_WORK_DIR",path)
-	decodeConfigJson()
 }

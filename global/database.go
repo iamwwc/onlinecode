@@ -68,11 +68,7 @@ func (s *Snippet)getID()string{
 }
 
 func NewController() *DatabaseController{
-	dir := os.Getenv("CODE_WORK_DIR")
-	if dir == ""{
-		panic("cannot find special ENV CODE_WORK_DIR")
-	}
-
+	dir := "./"
 	c := decodeConfigJson(dir)
 
 	//[username[:password]@][protocol[(address)]]/dbname[?param1=value1&...&paramN=valueN]

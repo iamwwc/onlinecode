@@ -12,6 +12,9 @@ func GenerateShareTemplate(w io.Writer, config string){
 		CodesValue:config,
 	}
 
-	temp:= template.Must(template.ParseFiles("./templates/index.html"))
+
+	//all index.html will be render by template engine
+	//
+	temp:= template.Must(template.ParseFiles("./index.html"))
 	temp.Execute(w,c)
 }
