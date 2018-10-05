@@ -63,7 +63,7 @@
         <counts>
           <entry key="DelveDebugerDockerfile" value="1" />
           <entry key="Dockerfile" value="10" />
-          <entry key="Dockerfile-debug-server-manual-start" value="2" />
+          <entry key="Dockerfile-debug-server-manual-start" value="3" />
           <entry key="Dockerfile-debug-server-run-automatic" value="2" />
           <entry key="DockerfileRunDlv" value="1" />
           <entry key="bash" value="2" />
@@ -91,7 +91,7 @@
           <entry key="Go" value="240" />
           <entry key="HTML" value="7" />
           <entry key="JSON" value="5" />
-          <entry key="PLAIN_TEXT" value="68" />
+          <entry key="PLAIN_TEXT" value="69" />
           <entry key="SQL" value="3" />
           <entry key="TOML file" value="15" />
           <entry key="YAML" value="19" />
@@ -101,7 +101,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="DelveDebugerDockerfile" value="35" />
-          <entry key="Dockerfile" value="206" />
+          <entry key="Dockerfile" value="210" />
           <entry key="Dockerfile-debug-server-run-automatic" value="1" />
           <entry key="bat" value="686" />
           <entry key="debug-server" value="132" />
@@ -121,7 +121,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dockerfile" value="43" />
+          <entry key="Dockerfile" value="47" />
           <entry key="Go" value="26492" />
           <entry key="HTML" value="122" />
           <entry key="JSON" value="42" />
@@ -212,8 +212,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state relative-caret-position="-207">
+              <caret column="4" selection-start-column="4" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dockerfile-debug-server-manual-start">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -262,18 +271,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
               <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-              <folding>
-                <element signature="e#14#47#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -870,13 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile-debug-server-manual-start">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile-debug-server-run-automatic">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -963,10 +953,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile-debug-server-manual-start">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        <state relative-caret-position="-207">
+          <caret column="4" selection-start-column="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>
