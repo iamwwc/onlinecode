@@ -1,4 +1,4 @@
-From debian:jessie as builder
+FROM debian:jessie as builder
 ENV BUILD_DEPS "curl git"
 
 COPY . /go/src/chaochaogege.com/onlinecode
