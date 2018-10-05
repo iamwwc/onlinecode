@@ -2,19 +2,19 @@
 
 version: "3"
 services:
-#  web:
-#    ports:
-#      - "8086:8086"
-#    image: iamwwc/onlinecode:latest
-#    volumes:
-#      - .:/go/src/chaochaogege.com/onlinecode
-#      - onlinecodetemp:/onlinecodetemp
-#      - /var/run/docker.sock:/var/run/docker.sock
-#    environment:
-#      CODE_WORK_DIR: /go/src/chaochaogege.com/onlinecode
-#    networks:
-#      - onlinecode-net
-#    container_name: onlinecodeapp
+  web:
+    ports:
+      - "8086:8086"
+    image: iamwwc/onlinecode:latest
+    volumes:
+      - .:/go/src/chaochaogege.com/onlinecode
+      - onlinecodetemp:/onlinecodetemp
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      CODE_WORK_DIR: /go/src/chaochaogege.com/onlinecode
+    networks:
+      - onlinecode-net
+    container_name: onlinecodeapp
   db:
     image: mysql:8.0
     container_name: onlinecodedb
@@ -29,25 +29,25 @@ services:
       - "3300:3306"
     networks:
       - onlinecode-net
-  debug-service:
-    image: ccr.ccs.tencentyun.com/wwc-docker-images/onlinecode:debug-server-run-dlv
-    ports:
-      - "8086:8086" #api port
-      - "8088:8088" #debug server
-    container_name: debug-server
-    volumes:
-      - ./:/go/src/chaochaogege.com/onlinecode
-      - onlinecodetemp:/onlinecodetemp
-      - /var/run/docker.sock:/var/run/docker.sock
-    security_opt:
-      - 'seccomp:unconfined'
-    cap_add:
-      - SYS_PTRACE
-    #restart: always
-    networks:
-      - onlinecode-net
-    environment:
-      CODE_WORK_DIR: /go/src/chaochaogege.com/onlinecode
+#  debug-service:
+#    image: ccr.ccs.tencentyun.com/wwc-docker-images/onlinecode:debug-server-run-dlv
+#    ports:
+#      - "8086:8086" #api port
+#      - "8088:8088" #debug server
+#    container_name: debug-server
+#    volumes:
+#      - ./:/go/src/chaochaogege.com/onlinecode
+#      - onlinecodetemp:/onlinecodetemp
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    security_opt:
+#      - 'seccomp:unconfined'
+#    cap_add:
+#      - SYS_PTRACE
+#    #restart: always
+#    networks:
+#      - onlinecode-net
+#    environment:
+#      CODE_WORK_DIR: /go/src/chaochaogege.com/onlinecode
 networks:
   onlinecode-net:
     driver: bridge
