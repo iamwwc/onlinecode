@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install ${BUILD_DEPS} -y --no-install-recommends;\
 FROM golang:1.11.1-alpine3.7
 RUN mkdir -p /go/src/chaochaogege.com/onlinecode
 WORKDIR /go/src/chaochaogege.com/onlinecode
-COPY --from=builder /go/bin/onlinecode .
-COPY --from=builder /go/src/chaochaogege.com/onlinecode/client-side/dist/* .
+COPY --from=builder /go/bin/onlinecode ./
+COPY --from=builder /go/src/chaochaogege.com/onlinecode/client-side/dist/* ./
 EXPOSE 8086
 ENTRYPOINT ["onlinecode"]
