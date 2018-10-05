@@ -27,4 +27,4 @@ COPY --from=builder /go/bin/onlinecode ./
 COPY --from=builder /go/src/chaochaogege.com/onlinecode/client-side/dist/ ./
 RUN chmod +x onlinecode
 EXPOSE 8086
-ENTRYPOINT ["/go/src/chaochaogege.com/onlinecode"]
+ENTRYPOINT ["/go/src/chaochaogege.com/onlinecode/onlinecode"]
