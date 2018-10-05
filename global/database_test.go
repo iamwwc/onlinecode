@@ -51,5 +51,5 @@ func Must(s string, err error)string{
 }
 
 func TestController(t *testing.T){
-	path := filepath.Dir(Must(os.Getwd()))
+	_ = filepath.Dir(Must(os.Getwd()))
 }

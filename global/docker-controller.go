@@ -5,7 +5,6 @@ import (
 	"context"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/api/types/network"
 	"github.com/docker/docker/pkg/stdcopy"
 	log "github.com/sirupsen/logrus"
 	"time"
@@ -27,6 +26,7 @@ func(c *DockerController)forceCloseConaniner(id string){
 func(c *DockerController)SubmitContainer(ctx context.Context,cmd string,imageName string)(*Response){
 	ctxx := context.Background()
 	hostConfig := getRestrictedContainerHostConfig()
+	networkConfig := getRestrictedContainerNetworkConfig()
 	log.Debugf("Create container, Working Dir %s, mount target %s\n",c.WorkingDir,VolumePath)
 	containerCreated, err := DockerClient.ContainerCreate(ctxx,&container.Config{
 		WorkingDir:c.WorkingDir,
@@ -35,9 +35,7 @@ func(c *DockerController)SubmitContainer(ctx context.Context,cmd string,imageNam
 		AttachStderr:true,
 		AttachStdin:true,
 		Image:imageName,
-	},hostConfig,&network.NetworkingConfig{
-
-	},"")
+	},hostConfig,networkConfig,"")
 
 	if err != nil{
 		log.Errorf("Error when create container, %v",err)
