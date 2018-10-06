@@ -11,4 +11,4 @@
 会导致创建执行容器的时候temp卷挂载不上去
 
 ####
-使用Docker Container对每一份代码进行了环境隔离，
+使用Docker Container对每一份代码进行了环境隔离，进行了权限限制

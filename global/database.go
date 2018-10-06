@@ -91,7 +91,7 @@ func initDatabase(authURL, dir string){
 
 	reader, err :=os.Open(initOnlineCodeDatabaseSQL)
 	if err != nil{
-		logrus.Errorf("Error when initDatabase, cannot optn initdatabase.sql file [%v]",err)
+		logrus.Errorf("Error when initDatabase, cannot open initdatabase.sql file [%v]",err)
 		panic(err)
 	}
 	bufReader := bufio.NewReader(reader)
@@ -100,7 +100,12 @@ func initDatabase(authURL, dir string){
 		if err != nil{
 			break;
 		}
-		db.Exec(string(line))
+		l := string(line)
+		logrus.Debug("start exec init sql [%s]",l)
+		_, err = db.Exec(l)
+		if err != nil{
+			logrus.Errorf("error when init databases, [%v]",err)
+		}
 	}
 }
 
