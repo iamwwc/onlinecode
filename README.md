@@ -1,6 +1,8 @@
 #### 开发
 
-使用Goland IDE打开，idea下会有配置文件，里面有个golang-delve启动文件
+关于本地IDE的配置，如果使用的是`Goland`
+那么可以参考 https://blog.jetbrains.com/go/2018/04/30/debugging-containerized-go-applications/
+
 打开`docker-compose.yml`,注释掉web service, 运行`docker-compose up -d`，然后就可以正常使用了，调试的时候选中`golang-delve`启动选项，里面已经配置好了在运行之前会先启动
 调试container
 
