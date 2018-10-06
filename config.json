@@ -1,5 +1,6 @@
 {
   "database_password":"mysqlpassword",
   "database_username":"mysql",
-  "database_ip":"onlinecodedb"
+  "database_ip":"onlinecodedb",
+  "max_run_container_numbers":"10"
 }

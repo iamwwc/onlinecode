@@ -18,9 +18,14 @@ func(c *DockerController)forceCloseConaniner(id string){
 	t := time.Second * 0
 	if err := DockerClient.ContainerStop(context.Background(),id, &t); err != nil{
 		log.Errorf("Error when close container %v\n",err)
-		return
+	}else{
+		log.Debugf("Container close success")
 	}
-	log.Debugf("Container close success")
+	removeContainer(context.Background(),id, types.ContainerRemoveOptions{
+		Force:true,
+		RemoveVolumes:true,
+	})
+
 }
 
 func(c *DockerController)SubmitContainer(ctx context.Context,cmd string,imageName string)(*Response){
@@ -86,12 +91,13 @@ func(c *DockerController)SubmitContainer(ctx context.Context,cmd string,imageNam
 		return generateResponse("Error when build\n")
 	}
 
-	if err := DockerClient.ContainerRemove(context.Background(),containerCreated.ID,types.ContainerRemoveOptions{
+	if err := removeContainer(context.Background(),containerCreated.ID,types.ContainerRemoveOptions{
 		RemoveVolumes:true,
 		Force:true,
-	}) ; err != nil{
-		return generateResponse("Error when build\n")
+	}); err != nil{
+		return generateResponse("error when remove container " + err.Error())
 	}
+
 
 	return &Response{
 		Error:"",
@@ -106,6 +112,13 @@ func(c *DockerController)SubmitContainer(ctx context.Context,cmd string,imageNam
 			},
 		},
 	}
+}
+
+func removeContainer(ctx context.Context, id string, options types.ContainerRemoveOptions)error{
+	if err := DockerClient.ContainerRemove(ctx,id,options); err != nil{
+		return err
+	}
+	return nil
 }
 
 func generateResponse(msg string)*Response{

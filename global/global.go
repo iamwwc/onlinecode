@@ -1,7 +1,10 @@
 package global
 
 import (
+	"encoding/json"
 	"github.com/docker/docker/client"
+	"io/ioutil"
+	"path/filepath"
 )
 
 const (
@@ -37,5 +40,17 @@ type Event struct{
 }
 
 
+func DecodeConfigJson(dir string)map[string]string{
+	config := filepath.Join(dir,"config.json")
+	bs, err := ioutil.ReadFile(config)
+	if err != nil{
+		panic(err)
+	}
+	m := make(map[string]string)
+	if err := json.Unmarshal(bs,&m); err != nil{
+		panic(err)
+	}
+	return m
+}
 
 

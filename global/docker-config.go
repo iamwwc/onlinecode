@@ -17,7 +17,7 @@ func getRestrictedContainerHostConfig()*container.HostConfig{
 		},
 		Resources:container.Resources{
 			MemorySwap:2e+7,
-			Memory:1e+7,
+			Memory:3e+7,
 			NanoCPUs:1,
 		},
 		NetworkMode:"none",

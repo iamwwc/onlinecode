@@ -6,11 +6,9 @@ import (
 	"crypto/sha256"
 	"database/sql"
 	"encoding/hex"
-	"encoding/json"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/sirupsen/logrus"
 	"io"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 )
@@ -69,7 +67,7 @@ func (s *Snippet)getID()string{
 
 func NewController() *DatabaseController{
 	dir := "./"
-	c := decodeConfigJson(dir)
+	c := DecodeConfigJson(dir)
 
 	//[username[:password]@][protocol[(address)]]/dbname[?param1=value1&...&paramN=valueN]
 	authURL := c["database_username"] + ":" + c["database_password"] + "@tcp(" + c["database_ip"] + ")/"
@@ -106,18 +104,6 @@ func initDatabase(authURL, dir string){
 	}
 }
 
-func decodeConfigJson(dir string)map[string]string{
-	config := filepath.Join(dir,"config.json")
-	bs, err := ioutil.ReadFile(config)
-	if err != nil{
-		panic(err)
-	}
-	m := make(map[string]string)
-	if err := json.Unmarshal(bs,&m); err != nil{
-		panic(err)
-	}
-	return m
-}
 
 
 

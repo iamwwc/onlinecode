@@ -1,11 +1,14 @@
 package main
 
 import (
+	"chaochaogege.com/onlinecode/global"
 	"github.com/onrik/logrus/filename"
 	log "github.com/sirupsen/logrus"
 	"io"
 	"net/http"
 	"os"
+	"strconv"
+	"sync/atomic"
 )
 
 func main() {
@@ -14,8 +17,15 @@ func main() {
 	multiWriter := io.MultiWriter(file,os.Stdout)
 	log.SetOutput(multiWriter)
 	hook := filename.NewHook()
+	c := global.DecodeConfigJson("./")
 	s, err := newServer(func(s *server) error {
-		//do nothing, for future
+		str := c["max_run_container_numbers"]
+		if counts , err:= strconv.Atoi(str); err != nil{
+			panic("bad config, error in config.json max_run_container_numbers, only allow int")
+		}else {
+			num := int32(counts)
+			atomic.StoreInt32(&s.maxCount,num)
+		}
 		return nil
 	})
 

@@ -12,6 +12,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"sync/atomic"
 	"time"
 )
 
@@ -23,6 +24,7 @@ type server struct {
 	mux        *http.ServeMux
 	controller *global.DockerController
 	db *global.DatabaseController
+	maxCount int32
 }
 
 func newServer(options ...func(*server) error) (*server, error) {
@@ -53,6 +55,13 @@ func (s *server) commandHandler(cmd func(*global.Request) (*global.Response, err
 			return
 		}
 
+		count := atomic.LoadInt32(&s.maxCount)
+		if count <= 0{
+			res := errorResponse("Exceeded the maximum allowed number of runs")
+			io.Copy(w, res)
+			return
+		}
+
 		var req global.Request
 		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 			resp := errorResponse("Error when decode request\n")
@@ -70,8 +79,9 @@ func (s *server) commandHandler(cmd func(*global.Request) (*global.Response, err
 			}
 			v["src"] = string(raw)
 		}
-
+		atomic.AddInt32(&s.maxCount, -1)
 		response, err := cmd(&req)
+		atomic.AddInt32(&s.maxCount, 1)
 		if err != nil {
 
 		}
