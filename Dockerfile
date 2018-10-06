@@ -15,7 +15,6 @@ RUN cd ./client-side \
     && npm install && npm run build;
 COPY sql ./client-side/dist/sql
 COPY config.json ./client-side/dist/
-COPY index.html ./client-side/dist/
 
 RUN apt-get update && apt-get install ${BUILD_DEPS} -y --no-install-recommends;\
     curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh; \
