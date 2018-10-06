@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fd6ece1-2e3f-4cbe-89d3-42d7e8eece80" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client-side/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +49,7 @@
         <counts>
           <entry key="DelveDebugerDockerfile" value="1" />
           <entry key="Dockerfile" value="13" />
-          <entry key="Dockerfile-debug-server-manual-start" value="3" />
+          <entry key="Dockerfile-debug-server-manual-start" value="4" />
           <entry key="Dockerfile-debug-server-run-automatic" value="2" />
           <entry key="DockerfileRunDlv" value="1" />
           <entry key="bash" value="4" />
@@ -66,7 +69,7 @@
           <entry key="sh" value="3" />
           <entry key="sql" value="4" />
           <entry key="toml" value="10" />
-          <entry key="yml" value="23" />
+          <entry key="yml" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -75,10 +78,10 @@
           <entry key="Go" value="301" />
           <entry key="HTML" value="13" />
           <entry key="JSON" value="8" />
-          <entry key="PLAIN_TEXT" value="83" />
+          <entry key="PLAIN_TEXT" value="84" />
           <entry key="SQL" value="4" />
           <entry key="TOML file" value="15" />
-          <entry key="YAML" value="23" />
+          <entry key="YAML" value="24" />
           <entry key="x86 Plan9 Assembly" value="2" />
         </counts>
       </usages-collector>
@@ -91,28 +94,28 @@
           <entry key="debug-server" value="132" />
           <entry key="debug-server-run-dlv" value="244" />
           <entry key="gitignore" value="57" />
-          <entry key="go" value="28575" />
+          <entry key="go" value="28588" />
           <entry key="html" value="155" />
           <entry key="json" value="96" />
           <entry key="lock" value="1" />
           <entry key="log" value="1" />
-          <entry key="md" value="554" />
+          <entry key="md" value="578" />
           <entry key="sh" value="764" />
           <entry key="sql" value="238" />
           <entry key="toml" value="652" />
-          <entry key="yml" value="1128" />
+          <entry key="yml" value="1138" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Dockerfile" value="434" />
-          <entry key="Go" value="28575" />
+          <entry key="Go" value="28588" />
           <entry key="HTML" value="155" />
           <entry key="JSON" value="96" />
-          <entry key="PLAIN_TEXT" value="2640" />
+          <entry key="PLAIN_TEXT" value="2664" />
           <entry key="SQL" value="238" />
           <entry key="TOML file" value="650" />
-          <entry key="YAML" value="1128" />
+          <entry key="YAML" value="1138" />
         </counts>
       </usages-collector>
     </session>
@@ -187,8 +190,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="184">
+              <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -196,17 +199,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/global/database.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="91" column="9" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
+            <state relative-caret-position="246">
+              <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/share.go">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state relative-caret-position="299">
+              <caret line="25" column="123" selection-start-line="25" selection-start-column="123" selection-end-line="25" selection-end-column="123" />
             </state>
           </provider>
         </entry>
@@ -214,26 +217,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client-side/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+            <state relative-caret-position="575">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server.go">
+        <entry file="file://$PROJECT_DIR$/Dockerfile-debug-server-manual-start">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-side/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="391">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -262,8 +261,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            <state relative-caret-position="391">
+              <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -334,7 +333,6 @@
         <option value="$PROJECT_DIR$/share.go" />
         <option value="$PROJECT_DIR$/.dockerignore" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/template.go" />
         <option value="$PROJECT_DIR$/global/database_test.go" />
         <option value="$PROJECT_DIR$/global/docker-controller.go" />
@@ -344,11 +342,12 @@
         <option value="$PROJECT_DIR$/server.go" />
         <option value="$PROJECT_DIR$/global/docker-config.go" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/global/database.go" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/client-side/index.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/global/database.go" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -404,12 +403,7 @@
             <path>
               <item name="onlinecode" type="b2602c69:ProjectViewProjectNode" />
               <item name="onlinecode" type="462c0819:PsiDirectoryNode" />
-              <item name="client-side" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="onlinecode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="onlinecode" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
+              <item name="global" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="onlinecode" type="b2602c69:ProjectViewProjectNode" />
@@ -436,7 +430,7 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docker-compose.yml" />
+    <property name="last_opened_file_path" value="D:/Codes/Go/opensocks" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -616,13 +610,13 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" id="Project" order="1" visible="true" weight="0.18456884" />
+      <window_info active="true" id="Project" order="1" visible="true" weight="0.15431164" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4969743" weight="0.5613748" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5030257" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="TODO" order="3" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="4" weight="0.2618658" />
+      <window_info anchor="bottom" id="Version Control" order="4" visible="true" weight="0.2618658" />
       <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49848714" weight="0.46972176" />
@@ -657,12 +651,6 @@
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/main.go</url>
-          <line>14</line>
-          <properties />
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/server.go</url>
           <line>99</line>
           <properties />
@@ -693,16 +681,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client-side/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://C:/Go/src/net/http/fs.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Go/src/net/http/server.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5">
@@ -934,20 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/global/database.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="91" column="9" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/share.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -972,24 +936,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1002,8 +952,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client-side/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/global/database.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile-debug-server-manual-start">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="25" column="123" selection-start-line="25" selection-start-column="123" selection-end-line="25" selection-end-column="123" />
         </state>
       </provider>
     </entry>
