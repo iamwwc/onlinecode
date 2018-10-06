@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fd6ece1-2e3f-4cbe-89d3-42d7e8eece80" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-side/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-side/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +56,7 @@
           <entry key="dockerignore" value="6" />
           <entry key="gitignore" value="7" />
           <entry key="go" value="301" />
-          <entry key="html" value="12" />
+          <entry key="html" value="13" />
           <entry key="json" value="8" />
           <entry key="lock" value="9" />
           <entry key="log" value="10" />
@@ -75,7 +73,7 @@
         <counts>
           <entry key="Dockerfile" value="6" />
           <entry key="Go" value="301" />
-          <entry key="HTML" value="12" />
+          <entry key="HTML" value="13" />
           <entry key="JSON" value="8" />
           <entry key="PLAIN_TEXT" value="83" />
           <entry key="SQL" value="4" />
@@ -94,7 +92,7 @@
           <entry key="debug-server-run-dlv" value="244" />
           <entry key="gitignore" value="57" />
           <entry key="go" value="28575" />
-          <entry key="html" value="154" />
+          <entry key="html" value="155" />
           <entry key="json" value="96" />
           <entry key="lock" value="1" />
           <entry key="log" value="1" />
@@ -109,7 +107,7 @@
         <counts>
           <entry key="Dockerfile" value="434" />
           <entry key="Go" value="28575" />
-          <entry key="HTML" value="154" />
+          <entry key="HTML" value="155" />
           <entry key="JSON" value="96" />
           <entry key="PLAIN_TEXT" value="2640" />
           <entry key="SQL" value="238" />
@@ -213,7 +211,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -222,11 +220,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/global/database_test.go">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client-side/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+            <state relative-caret-position="184">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -243,8 +241,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            <state relative-caret-position="138">
+              <caret line="6" column="58" lean-forward="true" selection-start-line="6" selection-start-column="58" selection-end-line="7" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -350,6 +348,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/client-side/index.html" />
       </list>
     </option>
   </component>
@@ -401,6 +400,11 @@
             <path>
               <item name="onlinecode" type="b2602c69:ProjectViewProjectNode" />
               <item name="onlinecode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="onlinecode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="onlinecode" type="462c0819:PsiDirectoryNode" />
+              <item name="client-side" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="onlinecode" type="b2602c69:ProjectViewProjectNode" />
@@ -612,7 +616,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" id="Project" order="1" visible="true" weight="0.16641453" />
+      <window_info active="true" id="Project" order="1" visible="true" weight="0.18456884" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4969743" weight="0.5613748" />
@@ -623,7 +627,7 @@
       <window_info anchor="bottom" id="Find" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49848714" weight="0.46972176" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.29787233" />
-      <window_info anchor="bottom" id="Docker" order="9" visible="true" weight="0.21767594" />
+      <window_info anchor="bottom" id="Docker" order="9" weight="0.21767594" />
       <window_info anchor="right" x="0" y="0" width="295" height="544" id="Documentation" side_tool="true" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="0" />
     </layout>
@@ -689,9 +693,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/runlog.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client-side/dist/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -978,13 +979,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -996,6 +990,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="58" lean-forward="true" selection-start-line="6" selection-start-column="58" selection-end-line="7" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-side/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
         </state>
       </provider>
     </entry>
