@@ -83,12 +83,13 @@ func NewController() *DatabaseController{
 }
 
 func initDatabase(authURL, dir string){
+
 	initOnlineCodeDatabaseSQL := filepath.Join(dir,"sql/init-onlinecode-database.sql")
 	db, err := sql.Open("mysql",authURL)
 	if err != nil{
 		panic(err)
 	}
-
+	IsDatabaseUp(db)
 	reader, err :=os.Open(initOnlineCodeDatabaseSQL)
 	if err != nil{
 		logrus.Errorf("Error when initDatabase, cannot open initdatabase.sql file [%v]",err)
@@ -109,6 +110,14 @@ func initDatabase(authURL, dir string){
 	}
 }
 
+func IsDatabaseUp(db *sql.DB)bool{
+	for {
+		if err := db.Ping(); err== nil{
+			return true
+		}
+		logrus.Debug("Waiting database up...")
+	}
+}
 
 
 
