@@ -3,3 +3,4 @@ scripts/onlinecode
 .dockerignore
 .travis.yml
 .git/
+.idea/

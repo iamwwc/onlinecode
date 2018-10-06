@@ -3,3 +3,4 @@ scripts/onlinecode
 debug
 **/runlog.log
 static/
+.idea/
