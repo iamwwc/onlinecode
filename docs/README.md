@@ -1,5 +1,5 @@
 ### Chinese Language
-### [中文文档](https://github.com/iamwwc/onlinecode/docs/README.md)
+### [中文文档](https://github.com/iamwwc/onlinecode/docs/zh-cn.md)
 
 -----------------------------------------------------------
 
